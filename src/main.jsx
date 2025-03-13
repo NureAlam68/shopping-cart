@@ -7,7 +7,11 @@ import { BrowserRouter, Route, Routes } from "react-router";
 createRoot(document.getElementById("root")).render(
   <BrowserRouter>
     <Routes>
-      <Route path="/" element={<App />} />
+      <Route element={<App/>}>
+        <Route path="/" element={<div>Home page</div>}/>
+        <Route path="/products" element={<div>Products page</div>}/>
+        <Route path="/cart" element={<div>Cart page</div>}/>
+      </Route>
     </Routes>
   </BrowserRouter>
 );

@@ -1,10 +1,15 @@
+import { Outlet } from 'react-router'
 import './App.css'
+import Navbar from './components/Navbar'
 
 function App() {
 
   return (
     <>
-      <h1 className='text-4xl'>Home</h1>
+      <Navbar></Navbar>
+      <main className='max-w-7xl mx-auto px-4'>
+        <Outlet/>
+      </main>
     </>
   )
 }
