@@ -19,7 +19,7 @@ const AddProduct = () => {
     dispatch(addProduct(data))
     navigate("/")
   }
- 
+
   return (
     <div className="max-w-md mx-auto mt-20 bg-white shadow-md rounded-lg p-6">
       <h2 className="text-xl font-bold mb-4 text-center">Add New Product!</h2>
