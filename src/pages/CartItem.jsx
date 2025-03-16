@@ -1,21 +1,25 @@
 import React from 'react';
+import { useDispatch } from 'react-redux';
+import { decreaseQuantity, increaseQuantity, removeFromCart } from '../redux/features/carts/cartSlice';
 
 const CartItem = ({item}) => {
     const { id, name, price, category, image, quantity } = item || {};
 
+    const dispatch = useDispatch();
+
     // increase 
     const handleIncreaseQuantity = () => {
-
+        dispatch(increaseQuantity(id))
     }
 
     // decrease 
     const handleDecreaseQuantity = () => {
-
+        dispatch(decreaseQuantity(id))
     }
 
     // remove
     const handleRemoveFromCart = () => {
-
+        dispatch(removeFromCart(id))
     }
 
     return (
@@ -69,7 +73,7 @@ const CartItem = ({item}) => {
             <div className="flex items-center space-x-4">
               <p className="text-sm">${(price * quantity).toFixed(2)}</p>
               <button
-                className="lws-removeFromCart text-red-500"
+                className="lws-removeFromCart text-red-500 cursor-pointer"
                 onClick={handleRemoveFromCart}
               >
                 x
